@@ -1,3 +1,4 @@
+<a href="/">[[Test]]</a>
 <a href="${git}" style="${style}" target="_blank">[[GitHub]]</a>
 | <a href="/exception.html">[[Exception]]</a>
 | <a href="http://localhost:2112/metrics">[[Application Metrics]]</a>
