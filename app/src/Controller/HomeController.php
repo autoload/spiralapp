@@ -23,7 +23,8 @@ class HomeController
      */
     public function index(): string
     {
-        return $this->views->render('home.dark.php');
+        $md = $this->showMDByName();
+        return $this->views->render('home.dark.php',['md' => $md]);
     }
 
     /**
@@ -46,5 +47,21 @@ class HomeController
         ]);
 
         return sprintf('Job ID: %s', $jobID);
+    }
+
+    /**
+     * @return string
+     */
+    private function showMDByName($name = 'test'): string
+    {
+        $str = '';
+        $file_path = directory('public') . '/md/'.$name.'.md' ;
+        if ( file_exists ($file_path))
+        {
+            $fp = fopen ($file_path , "r");
+            $str = fread ($fp , filesize($file_path));
+            fclose($fp);
+        }
+        return $str;
     }
 }

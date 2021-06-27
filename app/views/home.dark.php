@@ -6,16 +6,31 @@
 </stack:push>
 
 <define:body>
-    <div class="wrapper">
-        <div class="placeholder">
-            <img src="/images/logo.svg" alt="Framework Logotype" width="200px"/>
-            <h2>[[Welcome to Spiral Framework]]</h2>
-
-            <homepage:links git="https://github.com/spiral/app" style="font-weight: bold;"/>
-
-            <div style="font-size: 12px; margin-top: 10px;">
-                [[This view file is located in]] <b>app/views/home.dark.php</b> [[and rendered by]] <b>Controller\HomeController</b>.
-            </div>
+    <div class="container">
+        <div class="wrapper">
+            <img src="/images/logo.svg" alt="Spiral Logo" height="100px"/>
+            <img src="/images/php8_200.jpg" alt="PHP8 Logo" height="100px"/>
+            <img src="/images/docker_200.jpg" alt="Docker Logo" height="100px"/>
+            <img src="/images/aws_200.png" alt="AWS Logo" height="100px"/>
+            <div id="result_mk"></div>
         </div>
     </div>
+
+
+
+<script src="/js/showdown.min.js"></script> 
+<script>  
+    window.onload = function () {
+        //获取要转换的文字
+        var text = {{$md}};
+        //创建实例
+        var converter = new showdown.Converter();
+        //进行转换
+        var html = converter.makeHtml(text);
+        //展示到对应的地方  result便是id名称
+     document.getElementById("result_mk").innerHTML = html;
+    }
+</script>  
+
+
 </define:body>
