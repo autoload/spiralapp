@@ -1,8 +1,8 @@
 
-## Welcome to Spiral Framework
-This is a Demo.
+## Welcome to this service environment
+This is just a simple example.
 
-This view file is located in<b>app/views/home.dark.php</b> and rendered by <b>Controller\HomeController</b>.
+The development environment is built on the <b>AWS EC2</b> server, uses <b>Docker</b> to build <b>PHP8</b>, and <b>Spiral Framework 1.3.1</b> is installed.
 
 ---------
 
